@@ -270,6 +270,7 @@
     align-items: center;
     justify-content: center;
     color: var(--black-light-color);
+    z-index: 1;
 }
 .dashboard_1 .menu_items li a .link_name{
     font-size: 15px;
