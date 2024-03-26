@@ -490,7 +490,7 @@ setProduct(item)
       </section>}
 
       {/* table section students */}
-      {openDashMain === false && AddTSC==="Add Students"&& <section style={{overflow:'scroll'}} className={styles.dashboard}>
+      {openDashMain === false && AddTSC==="Add Students"&& <section style={{overflow:'auto'}} className={styles.dashboard}>
         <table className={styles.rwd_table} id="myTable">
           <tbody>
             <tr>
@@ -563,7 +563,7 @@ setProduct(item)
       </section>}
 
       {/* table section classes */}
-      {openDashMain === false && AddTSC==="Add Classes"&& <section style={{overflow:'scroll'}} className={styles.dashboard}>
+      {openDashMain === false && AddTSC==="Add Classes"&& <section style={{overflow:'auto'}} className={styles.dashboard}>
         <table className={styles.rwd_table} id="myTable">
           <tbody>
             <tr>
