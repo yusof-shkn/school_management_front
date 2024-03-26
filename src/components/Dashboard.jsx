@@ -406,7 +406,7 @@ const deleteItem = (id) =>{
       {/* Table section */}
       
       {/* table section teacher */}
-      {openDashMain === false && AddTSC==="Add Teachers"&& <section style={{overflow:'scroll'}} className={styles.dashboard}>
+      {openDashMain === false && AddTSC==="Add Teachers"&& <section style={{overflow:'auto'}} className={styles.dashboard}>
         <table className={styles.rwd_table} id="myTable">
           <tbody>
             <tr>
