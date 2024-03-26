@@ -4,6 +4,7 @@ import { BrowserRouter,Route,  Routes } from 'react-router-dom'
 import Login from './Login'
 import { Dashboard } from './Dashboard'
 import Dashboard_protection from './Dashboard_protection'
+import Database from './Database'
 import Notfound from './Notfound'
 
 function Route_bozurg() {
