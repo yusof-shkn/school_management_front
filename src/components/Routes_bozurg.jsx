@@ -19,6 +19,7 @@ function Route_bozurg() {
       <Route path='/login' element={<Login/>}></Route>
       <Route element={<Dashboard_protection/>}>
       <Route path='/dashboard' element={<Dashboard/>}></Route>
+        <Route path='/database' element={<Database/>}></Route>
       </Route>
       <Route path='/*' element={<Notfound/>}></Route>
     </Routes>
