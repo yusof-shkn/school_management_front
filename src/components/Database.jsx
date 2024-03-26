@@ -6,13 +6,13 @@ import { Toaster,toast } from "sonner";
 function Database() {
     let token=localStorage.getItem("token");
     let addDatabase=async()=>{
-
+try{
 let getData=await fetch(`https://yusof.pythonanywhere.com/api/database_seeding/?token=${token}`,{
 method: "GET",
 })
 
 let data=await getData.json()
-if(data){
+if(data.operation==="true"){
   toast.success("Database seeded successfully.")
 }else{
     toast.error("Database seeding failed.")
@@ -24,11 +24,14 @@ if(data){
             })
             
             let data=await getData.json()
-            if(data){
+            if(data.operation==="true"){
               toast.success("Database deleted successfully.")
             }else{
                 toast.error("Database delelation failed.")
             }
+    }catch(error){
+        toast.error("Error in server kind of "+error)
+    }
     };
     return (
      
