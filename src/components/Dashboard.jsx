@@ -10,7 +10,8 @@ import { jsPDF } from "jspdf";
 import autoTable from 'jspdf-autotable'
 import { toast,Toaster } from "sonner";
 import { BeatLoader } from 'react-spinners';
-import Profile from "./Profile"
+import Profile from "./Profile";
+import * as XLSX from "xlsx"
 
 function Dashboard() {
 
@@ -101,7 +102,7 @@ let token =localStorage.getItem("token")
   /////////////////////////////////////////////
 
 
-  /////////////////////////////////////close form
+  /////////////////////////////////////cancel form
   let cancel = () => {
     setCloseForm(false)
   }
@@ -154,6 +155,24 @@ let token =localStorage.getItem("token")
 
   }
   /////////////////////////////////
+
+
+  ////////////////////////////////saveExcel
+  let saveExcel = () => {
+
+let wb=XLSX.utils.book_new();
+let ws=XLSX.utils.json_to_sheet(dataTSC);
+
+XLSX.utils.book_append_sheet(wb,ws,"Sheet1");
+
+XLSX.writeFile(wb,"School-management.xlsx");
+ 
+
+  }
+  /////////////////////////////////
+
+
+
 let searchData2=(data)=>{
   if(data.length===0){
     if(AddTSC){ let getData = async (url) => {
@@ -397,7 +416,7 @@ const deleteItem = (id) =>{
 
 
       {/* dash head section */}
-      {openDashMain === false && <Dash_head AddTSC={AddTSC} closeSidebar={closeSidebar} openForm={openForm} savePdf={savePdf} searchData={searchData} searchData2={searchData2} />
+      {openDashMain === false && <Dash_head AddTSC={AddTSC} closeSidebar={closeSidebar} openForm={openForm} savePdf={savePdf} saveExcel={saveExcel} searchData={searchData} searchData2={searchData2} />
       }
 
       {/* dash head section */}

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 
-function Dash_head({AddTSC,closeSidebar,openForm,savePdf,searchData,searchData2}) {
+function Dash_head({AddTSC,closeSidebar,openForm,savePdf,searchData,searchData2,saveExcel}) {
 const [searchInput,setSearchInput]=useState("")
 
 const handleLogout = () => {
@@ -19,6 +19,11 @@ const handleLogout = () => {
             savePdf()
          }}>
           Export PDF
+        </Link>
+         <Link   className={styles.button} onClick={()=>{
+            saveExcel()
+         }}>
+          Export EXCEL
         </Link>
          <Link  className={styles.button_2} onClick={()=>{
             openForm()
@@ -77,6 +82,7 @@ const handleLogout = () => {
   savePdf: PropTypes.func.isRequired,
   searchData: PropTypes.func.isRequired,
   searchData2: PropTypes.func.isRequired,
+  saveExcel: PropTypes.func.isRequired,
 
 };
 
